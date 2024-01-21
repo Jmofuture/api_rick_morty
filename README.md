@@ -64,6 +64,6 @@ Este proyecto está bajo la Licencia MIT - mira el archivo `LICENSE` para detall
 
 ## Contacto
 
-[@Jmofuture](https://twitter.com/Jmofuture) - email@example.com
+[@Jmofuture](https://twitter.com/Jmofuture)
 
 Link del Proyecto: [https://github.com/tu-usuario/rick-and-morty-supabase](https://github.com/tu-usuario/rick-and-morty-supabase)
