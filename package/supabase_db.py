@@ -31,4 +31,28 @@ def insert_data(url, key, df, table_name):
 
 
 
+def insert_data_from_df(url, key, df, table_name):
+
+    df.columns = df.columns.str.replace('.', '_', regex=False)
+
+
+    client = create_client(url, key)
+    if client is None:
+        print("No se pudo crear el cliente de Supabase.")
+        return
+
+    data_to_insert = df.to_dict(orient='records')
+    
+    while True:
+        try:
+            response = client.table(table_name).insert(data_to_insert).execute()
+            if response.error:
+                print(f"Error al insertar datos: {response.error}")
+            else:
+                print(f"Datos insertados exitosamente. {len(data_to_insert)} filas añadidas.")
+        except Exception as e:
+            print(f"Excepción al insertar datos: {e}")
+
+
+
 
